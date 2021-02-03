@@ -50,7 +50,7 @@ function Books() {
                     result.map((book, id) => {
                         return <Bookcard
                             key={id}
-                            image={book.volumeInfo.imageLinks.smallThumbnail}
+                            image={book.volumeInfo.imageLinks.thumbnail}
                             title={book.volumeInfo.title}
                             author={book.volumeInfo.authors}
                             description={book.volumeInfo.description}
