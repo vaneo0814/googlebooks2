@@ -14,7 +14,7 @@ function App() {
       <Nav/>
       <Header/>
       <Switch>
-        <Route exact path={["/", "/search"]}>
+        <Route exact path={["/react_googlebooks", "/search"]}>
           <Books/>
         </Route>
         <Route exact path="/savedbooks/:id">
