@@ -1,0 +1,8 @@
+.bookContainer {
+    background-color: pink;
+    width: 250px;
+    border: 1px solid grey;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 5px;
+}

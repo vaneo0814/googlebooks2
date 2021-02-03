@@ -1,0 +1,20 @@
+.headerContainer {
+    background-image: url("https://i.pinimg.com/originals/67/18/22/671822c2f63dd5f65d8fd15c9710420b.jpg");
+    height: 200px;
+    margin-bottom: 20px;
+    margin-top: -40px;
+}
+
+h1{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+    text-align: center;
+    font-size: 60px;
+    padding-top: 40px;
+
+}
+
+h3 {
+    color: white;
+    text-shadow: 2px 2px black;
+}
