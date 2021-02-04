@@ -14,7 +14,7 @@ h1{
 
 }
 
-h3 {
+.headerInfo {
     color: white;
     text-shadow: 2px 2px black;
 }

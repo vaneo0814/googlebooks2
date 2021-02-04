@@ -5,32 +5,17 @@ import Bookcard from "../BookCard";
 import './style.css'
 
 function Books() {
-    // constructor(props) {
-    //     super(props);
-    //     // super(props) is a reference to the parents constructor() function, that's all it is. We have to add super(props) every single time we define a constructor() function inside a class-based component.
-    //     this.state = {
-    //         books: [], //storing books in this empty books array
-    //         searchBox: '', //this will update state everytime a user searches in the search input field
-    //     }
-    // }
-    //going to try a different approach under here...
-
     const [book, setBook] = useState("");
     const [result, setResult] = useState([]);
-    const [apiKey] = useState("AIzaSyBMzXeKC4Z5IIS7vmr-OZgfZb66i4dvV3Q");
-    // axios.get("https://www.googleapis.com/books/v1/volumes?q");
-
-
 
     // creating handleFormSubmit for API call
     function handleFormSubmit(event) {
         event.preventDefault();
-        axios.get("https://www.googleapis.com/books/v1/volumes?q=" + book + "&key=" + apiKey + "&maxResults=40")
+        axios.get("https://www.googleapis.com/books/v1/volumes?q=" + book + "&maxResults=40")
             .then(data => {
                 console.log(data.data.items);
                 setResult(data.data.items);
             })
-
     }
 
     //creating handlesearch method..have to fire an event..
@@ -38,6 +23,13 @@ function Books() {
         const book = event.target.value;
         setBook(book);
     }
+
+    //need to implement a handlesavebook function
+    // function handleSaveBooks(id) {
+    //     const bookToSave = books.find((book) => book.id === id)
+    //     saveBook(bookToSave).then(() => console.log(bookToSave))
+    //         .catch((err) => console.log(err))
+    // }
 
     return (
         <div>
