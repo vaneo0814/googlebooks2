@@ -23,14 +23,7 @@ function Books() {
         const book = event.target.value;
         setBook(book);
     }
-
-    //need to implement a handlesavebook function
-    // function handleSaveBooks(id) {
-    //     const bookToSave = books.find((book) => book.id === id)
-    //     saveBook(bookToSave).then(() => console.log(bookToSave))
-    //         .catch((err) => console.log(err))
-    // }
-
+    
     return (
         <div>
             <form onSubmit={handleFormSubmit}>

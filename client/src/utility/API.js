@@ -11,3 +11,7 @@ export const saveBook = (bookData) => {
 export const deleteBook = (bookId) => {
     return axios.delete(`/api/books/${bookId}`)
 }
+
+export const searchBooks = (query) => {
+    return axios.get(`https://www.googleapis.com/books/v1/volumes?q=` + query)
+}

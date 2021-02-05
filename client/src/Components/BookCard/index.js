@@ -1,28 +1,56 @@
 import React from 'react';
+import {saveBook, deleteBook} from "../../utility/API";
 import './style.css'
 
 function Bookcard(props) {
-    return(
-        <div className="bookContainer">
-            <img src={props.image} alt={props.title}/>
-            <div className="renderData">
-                <h2>
-                    {props.title}
-                </h2>
-                <h3>
-                    {props.author || "ANON"}
-                </h3>
-                <p>
-                    {props.description || "No description available"}
-                </p>
-                {/* Buttons that will view or save book*/}
-                <a href={props.link} target="__blank">
-                <button type="submit">View</button>
-                </a>
-                <button type="submit">Save</button>
-            </div>
-        </div>
+    // function to handle saving book to db when save button is clicked
+    console.log(props);
+        const handleSaveBtn = () => {
+            saveBook({
+                title: props.title,
+                authors: props.authors,//fix this line with the ? because some books dont have authors
+                description: props.description,
+                image: props.image,
+                link: props.link
+            }).then(
+                res => console.log(res)
+            ).catch(err => console.log(err))
+        };
 
-    )
-}
-export default Bookcard;
+        // function to handle deleting book from db when delete button is clicked
+        const handleDeleteBtn = () => {
+            deleteBook(props.id)
+                .then(
+                    res => {
+                        // use loadBooks prop from Saved page component
+                        props.loadBooks()
+                        console.log(props.id)
+                        console.log(res);
+                    }).catch(err => console.log(err))
+        };
+
+        return (
+            <div className="bookContainer">
+                <img src={props.image} alt={props.title} />
+                <div className="renderData">
+                    <h2>
+                        {props.title}
+                    </h2>
+                    <h3>
+                        {props.author || "ANON"}
+                    </h3>
+                    <p>
+                        {props.description || "No description available"}
+                    </p>
+                    {/* Buttons that will view or save book*/}
+                    <a href={props.link} target="__blank">
+                        <button type="submit">View</button>
+                    </a>
+                    <button type="submit" onClick={handleSaveBtn}>Save</button>
+                    <button type="submit" onClick={handleDeleteBtn}>Delete</button>
+                </div>
+            </div>
+
+        )
+    }
+    export default Bookcard;
