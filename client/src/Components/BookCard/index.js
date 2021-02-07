@@ -22,7 +22,7 @@ function Bookcard(props) {
             deleteBook(props.id)
                 .then(
                     res => {
-                        // use loadBooks prop from Saved page component
+                        //call load books props here
                         props.loadBooks()
                         console.log(props.id)
                         console.log(res);

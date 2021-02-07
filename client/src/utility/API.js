@@ -5,7 +5,7 @@ export const getSavedBooks = () => {
 }
 
 export const saveBook = (bookData) => {
-    return axios.post("/api/books", bookData)
+    return axios.post("/api/savedBooks", bookData)
 }
 
 export const deleteBook = (bookId) => {

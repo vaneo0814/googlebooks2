@@ -17,7 +17,7 @@ function App() {
         <Route exact path={["/react_googlebooks", "/search"]}>
           <Books/>
         </Route>
-        <Route exact path="/savedbooks/:id">
+        <Route exact path="/savedbooks">
           <SavedBooks/>
         </Route>
         <Route>
