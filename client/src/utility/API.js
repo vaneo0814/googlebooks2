@@ -8,8 +8,8 @@ export const saveBook = (bookData) => {
     return axios.post("/api/savedBooks", bookData)
 }
 
-export const deleteBook = (bookId) => {
-    return axios.delete(`/api/books/${bookId}`)
+export const deleteBook = (id) => {
+    return axios.delete(`/api/books/` + id)
 }
 
 export const searchBooks = (query) => {

@@ -25,15 +25,12 @@ module.exports = {
         authors: req.body.authors,
         image: req.body.image,
         description: req.body.description,
-        title: req.body.title,
+        title: req.body.title
       });
-    //   console.log()
-    //   .then(dbModel => res.json(dbModel))
-    //   .catch(err => res.status(422).json(err));
   },
   removeBook: function(req, res) {
     db.Book
-      .findById({ _id: req.params.id })
+      .findById({id: req.params.id })
       .then(dbModel => dbModel.remove())
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
