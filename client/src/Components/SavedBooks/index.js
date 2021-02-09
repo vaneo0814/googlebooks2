@@ -36,7 +36,7 @@ class SavedBooks extends Component {
                                 authors={book.authors}
                                 description={book.description}
                                 link={book.link}
-                                id={book.id}
+                                bookId={book.id}
                                 loadBooks={this.loadBooks}
                             />
                         );

@@ -32,9 +32,10 @@ function Books() {
             </form>
             <div className="list">
                 {
-                    result.map((book, id) => {
+                    result.map((book) => {
                         return <Bookcard
-                            key={id}
+                            key={book.id}
+                            bookId={book.id}
                             image={book.volumeInfo.imageLinks?.thumbnail}
                             title={book.volumeInfo.title}
                             authors={book.volumeInfo.authors}

@@ -11,26 +11,27 @@ function Bookcard(props) {
             authors: props.authors,
             description: props.description,
             image: props.image,
-            link: props.link
+            link: props.link,
+            bookId: props.bookId
         }).then(
             res => console.log(res)
         ).catch(err => console.log(err))
     };
 
     // function to handle deleting book from db when delete button is clicked
-    const handleDeleteBtn = () => {
-        deleteBook(props.id)
+    const handleDeleteBtn = (bookId) => {
+        deleteBook(bookId)
             .then(
                 res => {
                     //call load books props here
                     props.loadBooks()
-                    console.log(`handledeletebtn console` + props.id)
+                    console.log(`handledeletebtn console` + props.bookId)
                     console.log(res);
                 }).catch(err => console.log(err))
     };
 
     return (
-        <div className="bookContainer">
+        <div className="bookContainer" key={props.bookId}>
             <img src={props.image} alt={props.title} />
             <div className="renderData">
                 <h2>
@@ -47,7 +48,7 @@ function Bookcard(props) {
                     <button type="submit">View</button>
                 </a>
                 <button type="submit" onClick={handleSaveBtn}>Save</button>
-                <button type="submit" onClick={handleDeleteBtn}>Delete</button>
+                <button type="submit" onClick={() => handleDeleteBtn(props._id)}>Delete</button>
             </div>
         </div>
 

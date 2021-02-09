@@ -7,6 +7,7 @@ const bookSchema = new Schema({
   image: { type: String},
   description: { type: String},
   link : { type: String},
+  bookId: {type: String}
 });
 
 const Book = mongoose.model("Book", bookSchema);
