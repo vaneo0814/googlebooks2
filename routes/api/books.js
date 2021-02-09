@@ -2,14 +2,12 @@ const router = require("express").Router();
 const booksController = require("../../controllers/booksController");
 
 // Matches with "/api/books"
-router.route("/api/books")
+router.route("/")
   .get(booksController.findAll)
-
-  router.route("/savedBooks")
   .post(booksController.saveBook)
 
 // Matches with "/api/books/:id"
-router.route("/api/books/:id")
+router.route("/:id")
   .get(booksController.findById)
   .delete(booksController.removeBook);
 

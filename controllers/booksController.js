@@ -20,13 +20,14 @@ module.exports = {
   saveBook: function(req, res) {
     console.log(`Lets see what this consoles: ` , req.body);
     db.Book
-      .create({
-        title: req.body.title,
-        authors: req.body.authors,
-        image: req.body.image,
-        description: req.body.description,
-        title: req.body.title
-      });
+      .create(
+        req.body
+        // title: req.body.title,
+        // authors: req.body.authors,
+        // image: req.body.image,
+        // description: req.body.description,
+        // title: req.body.title
+      );
   },
   removeBook: function(req, res) {
     db.Book

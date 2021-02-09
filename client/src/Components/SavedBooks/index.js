@@ -31,11 +31,11 @@ class SavedBooks extends Component {
                         return (
                             <BookCard
                                 key={book.id}
-                                image={book.volumeInfo.imageLinks.thumbnail}
-                                title={book.volumeInfo.title}
-                                author={book.volumeInfo.authors}
-                                description={book.volumeInfo.description}
-                                link={book.volumeInfo.previewLink}
+                                image={book.image}
+                                title={book.title}
+                                authors={book.authors}
+                                description={book.description}
+                                link={book.link}
                                 id={book.id}
                                 loadBooks={this.loadBooks}
                             />

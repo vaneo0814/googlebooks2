@@ -37,7 +37,7 @@ function Bookcard(props) {
                     {props.title}
                 </h2>
                 <h3>
-                    {props.author || "ANON"}
+                    {props.authors || "ANON"}
                 </h3>
                 <p>
                     {props.description || "No description available"}
