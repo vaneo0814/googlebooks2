@@ -48,7 +48,7 @@ function Bookcard(props) {
                     <button type="submit">View</button>
                 </a>
                 <button type="submit" onClick={handleSaveBtn}>Save</button>
-                <button type="submit" onClick={() => handleDeleteBtn(props._id)}>Delete</button>
+                <button type="submit" onClick={() => handleDeleteBtn(props.id)}>Delete</button>
             </div>
         </div>
 

@@ -30,13 +30,14 @@ class SavedBooks extends Component {
                     {this.state.savedBooks.map(book => {
                         return (
                             <BookCard
-                                key={book.id}
+                                key={book._id}
                                 image={book.image}
                                 title={book.title}
                                 authors={book.authors}
                                 description={book.description}
                                 link={book.link}
                                 bookId={book.id}
+                                id={book._id}
                                 loadBooks={this.loadBooks}
                             />
                         );
